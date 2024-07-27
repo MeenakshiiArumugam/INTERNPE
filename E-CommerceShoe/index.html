@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Shoe Loft</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>The Shoe Loft</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#cart">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="hero">
+                <h2>Welcome to Our Shoe Store</h2>
+                <p>Find the perfect pair for every occasion.</p>
+            </div>
+        </section>
+
+        <section id="shop" class="product-list">
+            <div class="product" id="product1">
+                <img src="shoe1.jpg" alt="Shoe 1">
+                <h3>The Classic White</h3>
+                <p>$50.00</p>
+                <button onclick="openCartModal('The Classic White', 50)">Add to Cart</button>
+            </div>
+            <div class="product" id="product2">
+                <img src="shoe2.jpg" alt="Shoe 2">
+                <h3>A Tint of Pink</h3>
+                <p>$60.00</p>
+                <button onclick="openCartModal('A Tint of Pink', 60)">Add to Cart</button>
+            </div>
+            <div class="product" id="product3">
+                <img src="shoe3.jpg" alt="Shoe 3">
+                <h3>Pink Delight</h3>
+                <p>$70.00</p>
+                <button onclick="openCartModal('Pink Delight', 70)">Add to Cart</button>
+            </div>
+            <div class="product" id="product4">
+                <img src="shoe4.jpg" alt="Shoe 4">
+                <h3>Chunky Shoes</h3>
+                <p>$30.00</p>
+                <button onclick="openCartModal('Chunky Shoes', 30)">Add to Cart</button>
+            </div>
+            <div class="product" id="product5">
+                <img src="shoe5.jpg" alt="Shoe 5">
+                <h3>Chunky Pink Girls</h3>
+                <p>$50.00</p>
+                <button onclick="openCartModal('Chunky Pink Girls', 50)">Add to Cart</button>
+            </div>
+            <div class="product" id="product6">
+                <img src="shoe6.jpg" alt="Shoe 6">
+                <h3>Grey Rules</h3>
+                <p>$80.00</p>
+                <button onclick="openCartModal('Grey Rules', 80)">Add to Cart</button>
+            </div>
+            <div class="product" id="product7">
+                <img src="shoe7.jpg" alt="Shoe 7">
+                <h3>Sports Dude</h3>
+                <p>$60.00</p>
+                <button onclick="openCartModal('Sports Dude', 60)">Add to Cart</button>
+            </div>
+            <div class="product" id="product8">
+                <img src="shoe8.jpg" alt="Shoe 8">
+                <h3>Black Beast</h3>
+                <p>$50.00</p>
+                <button onclick="openCartModal('Black Beast', 50)">Add to Cart</button>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="cart">
+            <h2>Your Cart</h2>
+            <div id="cart-items" class="cart-card"></div>
+            <p>Total: $<span id="total">0.00</span></p>
+            <button onclick="checkout()">Checkout</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Shoe Store. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCartModal()">&times;</span>
+            <h2 id="modal-product-name"></h2>
+            <p id="modal-product-price"></p>
+            <label for="modal-colors">Select Color:</label>
+            <div id="modal-colors" class="color-options">
+                <!-- Color buttons will be added dynamically -->
+            </div>
+            <label for="modal-quantity">Quantity:</label>
+            <div class="quantity-selector">
+                <button onclick="changeQuantity(-1)">-</button>
+                <input type="number" id="modal-quantity" value="1" min="1">
+                <button onclick="changeQuantity(1)">+</button>
+            </div>
+            <button class="add-to-cart-btn" onclick="addProductToCart()">Add to Cart</button>
+    
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+        let currentProduct = {};
+        const colors = ['Red', 'Blue', 'Green', 'Black', 'White'];
+
+        function openCartModal(product, price) {
+            currentProduct = { product, price };
+            document.getElementById('modal-product-name').textContent = product;
+            document.getElementById('modal-product-price').textContent = `$${price.toFixed(2)}`;
+
+            const colorsContainer = document.getElementById('modal-colors');
+            colorsContainer.innerHTML = '';
+            colors.forEach(color => {
+                const colorButton = document.createElement('button');
+                colorButton.style.backgroundColor = color.toLowerCase();
+                colorButton.onclick = () => selectColor(color);
+                colorsContainer.appendChild(colorButton);
+            });
+
+            document.getElementById('modal-quantity').value = 1;
+
+            const modal = document.getElementById('cart-modal');
+            modal.style.display = 'block';
+        }
+
+        function closeCartModal() {
+            document.getElementById('cart-modal').style.display = 'none';
+        }
+
+        function selectColor(color) {
+            currentProduct.color = color;
+        }
+
+        function changeQuantity(amount) {
+            const quantityInput = document.getElementById('modal-quantity');
+            let quantity = parseInt(quantityInput.value);
+            quantity += amount;
+            if (quantity < 1) quantity = 1;
+            quantityInput.value = quantity;
+        }
+
+        function addProductToCart() {
+            const quantity = parseInt(document.getElementById('modal-quantity').value);
+            if (!currentProduct.color) {
+                alert('Please select a color.');
+                return;
+            }
+
+            cart.push({ ...currentProduct, quantity });
+            total += currentProduct.price * quantity;
+            displayCart();
+            closeCartModal();
+        }
+
+        function displayCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const div = document.createElement('div');
+                div.textContent = `${item.product} (${item.color}) - $${item.price.toFixed(2)} x ${item.quantity}`;
+                cartItems.appendChild(div);
+            });
+            document.getElementById('total').textContent = total.toFixed(2);
+        }
+
+        function checkout() {
+            alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
+            cart = [];
+            total = 0;
+            displayCart();
+        }
+
+        // Close the modal when the user clicks anywhere outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('cart-modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
