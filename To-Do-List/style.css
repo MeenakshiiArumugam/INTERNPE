@@ -1,0 +1,245 @@
+body {
+    font-family: 'Poppins';
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.Theme-changer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.select {
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 41px;
+    height: 41px;
+}
+
+
+.theme {
+    background: rgb(224, 76, 141);
+    background: linear-gradient(240deg, rgba(224, 76, 141, 1) 0%, rgba(51, 133, 230, 1) 100%);
+    color: #fff9f9;
+    border-color: #fff9f9;
+    transition: background-color 3s ease-in, color 500ms ease-in;
+}
+
+.theme1 {background: rgb(223,231,29);
+    background: -moz-linear-gradient(90deg, rgba(223,231,29,1) 0%, rgba(242,134,191,1) 68%, rgba(0,212,255,1) 100%, rgba(255,0,0,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(223,231,29,1) 0%, rgba(242,134,191,1) 68%, rgba(0,212,255,1) 100%, rgba(255,0,0,1) 100%);
+    background: linear-gradient(90deg, rgba(223,231,29,1) 0%, rgba(242,134,191,1) 68%, rgba(0,212,255,1) 100%, rgba(255,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dfe71d",endColorstr="#ff0000",GradientType=1);
+    border-color: #fff9f9;
+    color: black;
+    transition: background-color 3s ease-in, color 500ms ease-in;
+    
+}
+
+.theme2 {
+    background: rgb(2,0,36);
+background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1);
+    
+    color: #ffffff;
+    border-color: #fff9f9;
+    transition: background-color 3s ease-out, color 500ms ease-in;
+    
+}
+
+h1 {
+    font-size: 8vh;
+}
+
+.contain {
+    height: 80vh;
+}
+
+.contain1 {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'Poppins',sans-serif;
+    /* padding: 30px; */
+}
+
+.res {
+    padding-left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.res ul {
+    padding-inline-start: 0%;
+}
+
+.res ol {
+    justify-content: center;
+    list-style: none;
+    width: 50%;
+    background: rgb(170, 94, 169);
+    background: linear-gradient(90deg, rgba(170, 94, 169, 1) 23%, rgba(213, 80, 147, 1) 32%, rgba(220, 78, 78, 1) 46%, rgba(224, 76, 141, 1) 100%, rgba(51, 133, 230, 1) 100%);
+    border: 1px solid white;
+    font-size: x-large;
+    border-radius: 1rem;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    /* transition: background-color 300ms ease-in-out, color 300ms ease-in-out;  */
+}
+/* Next Band */
+.res1 {
+    padding-left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.res1 ul {
+    padding-inline-start: 0%;
+}
+
+.res1 ol {
+    justify-content: center;
+    list-style: none;
+    width: 50%;
+    background: rgb(172,172,182);
+    background: linear-gradient(58deg, rgba(172,172,182,1) 15%, rgba(121,121,119,1) 100%);
+    color: black;
+    font-size: x-large;
+    border-radius: 1rem;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+/* Next Band  */
+
+.res2 {
+    padding-left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.res2 ul {
+    padding-inline-start: 0%;
+}
+
+.res2 ol {
+    justify-content: center;
+    list-style: none;
+    width: 50%;
+    background: rgb(200,200,237);
+    background: linear-gradient(58deg, rgba(200,200,237,1) 15%, rgba(255,254,233,1) 100%);
+    color: black;
+    border: 1px solid white;
+    font-size: x-large;
+    border-radius: 1rem;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+
+.inside {
+    text-align: center;
+    width: 70vw;
+    padding-bottom: 10px;
+    height: max-content;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.inside button {
+    right: 45vmin;
+    font-size: large;
+    padding: 15px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border: 1px white;
+}
+
+.inside ol {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins',sans-serif;
+    font-size: large;
+
+}
+
+form input {
+    width: 50%;
+    border: none;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    padding: 15px;
+    outline: none;
+    transition: background-color 200ms ease-out, color 100ms ease-in;
+    font-family: 'Poppins',sans-serif;
+    font-size: large;
+}
+
+form input:hover {
+    color: black;
+    background-color: #f6f2f2;
+    font-size: large;
+}
+
+form button {
+    padding: 15px;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border: none;
+    transition: background-color 200ms ease-out, color 100ms ease-out;
+    font-family: 'Poppins',sans-serif;
+    font-size: large;
+}
+
+.btn-hover {
+    transition: background-color 200ms ease-out, color 100ms ease-out;
+}
+
+.btn-hover:hover {
+    background-color: #000000;
+    color: #f5f5f5;
+}
+.suggestions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.suggestion-card {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(240deg, rgb(245, 112, 169) 0%, rgb(87, 154, 236) 100%);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.suggestion-card:hover {
+    transform: scale(1.05);
+    background: linear-gradient(240deg, rgb(126, 184, 255) 0%, rgb(220, 134, 171) 100%);
+}
